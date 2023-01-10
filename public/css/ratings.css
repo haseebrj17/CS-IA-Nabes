@@ -1,0 +1,260 @@
+:root {
+    --dark: #373151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --gray: #6b7280;
+    --light: #fff;
+    --pink: #ec4899;
+    --purple: #8b5cf6;
+    --num1: 0;
+    --num2: 0;
+    --num3: 0;
+    --num4: 0;
+    --num5: 0;
+    --num6: 0;
+    --num7: 0;
+}
+*{
+    font-family: 'fira sans', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+.subsection-navbar{
+    background-color:#333333;
+    width: 90%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 70px;
+}
+.logo-subsection-matches{
+    width: 120px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 2px solid #263238;
+    border-radius: 70px;
+    margin-left: 50px;
+}
+
+.subsection-navbar h1 {
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        font-size: 92px;
+        padding: 20px 40px;
+        text-align: center;
+        text-transform: uppercase;
+        text-rendering: optimizeLegibility;
+        border: 10px solid #111111;
+        border-top: hidden;
+        border-bottom: hidden;
+        
+}
+.logo-subsection-matches:hover{
+    background-color: #ecd9ba;
+    transition: 1s;
+}
+/*source:https://codepen.io/juanbrujo/pen/DBKxxM*/
+.deepshadow {
+    color: #e0dfdc;
+    background-color: transparent;
+    letter-spacing: .1em;
+    text-shadow: 
+      0 -1px 0 #fff, 
+      0 1px 0 #2e2e2e, 
+      0 2px 0 #2c2c2c, 
+      0 3px 0 #2a2a2a, 
+      0 4px 0 #282828, 
+      0 5px 0 #262626, 
+      0 6px 0 #242424, 
+      0 7px 0 #222, 
+      0 8px 0 #202020, 
+      0 9px 0 #1e1e1e, 
+      0 10px 0 #1c1c1c, 
+      0 11px 0 #1a1a1a, 
+      0 12px 0 #181818, 
+      0 13px 0 #161616, 
+      0 14px 0 #141414, 
+      0 15px 0 #121212, 
+      0 22px 30px rgba(0, 0, 0, 0.9);
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.container .card{
+    position: relative;
+    width: 220px;
+    height: 250px;
+    background: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* HERE STARTS THE CSS FOR THE FIRST RATING */
+
+
+.container .card .percent{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.container .card .percent svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+.container .card .percent svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: #111111;
+    transform: translate(5px,5px);
+}
+.container .card .percent svg circle:nth-child(2){
+    stroke:var(--clr) ;
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num1)) / 100);
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.5s;   
+}
+.dot{
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    animation: animateDot 2s linear forwards;
+}
+@keyframes animateDot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(3.6deg * var(--num1)));
+    }
+}
+
+.dot::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr);
+}
+
+
+/* HERE ENDS THE CODE FOR THE FIRST RATING*/
+
+
+
+.container .card .percent2{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.container .card .percent2 svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+.container .card .percent2 svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: #111111;
+    transform: translate(5px,5px);
+}
+.container .card .percent2 svg circle:nth-child(2){
+    stroke:var(--clr) ;
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num2)) / 100);
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.5s;
+}
+.dot2{
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    animation: animateDot2 2s linear forwards;
+}
+@keyframes animateDot2{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(3.6deg * var(--num2)));
+    }
+}
+
+.dot2::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr);
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.number{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.5s;
+}
+.number h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+.number p{
+    font-weight: 300;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 0.1px;
+    transform: translateY(-15px);
+}

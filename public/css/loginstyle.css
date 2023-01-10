@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(loginbg.webp);
+}
+.box {
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+}
+.box h1 {
+    color: #f0f0f0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.box input[type="text"], .box input[type="password"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #f0f0f0;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: wheat;
+    border-radius: 15px;
+    transition: 0.25px;
+}
+.box input[type="text"]:focus, .box input[type="password"]:focus {
+    width: 250px;
+    border-color: #f0f0f0;
+    transition: 00.5s;
+}
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #f0f0f0;
+    padding: 14px 30px;
+    outline: none;
+    color: #f0f0f0;
+    border-radius: 15px;
+    transition: 0.25px;
+}
+.box input[type="submit"]:hover {
+    background: #f0f0f0;
+    transition: 00.5s;
+    color: #333333;
+}

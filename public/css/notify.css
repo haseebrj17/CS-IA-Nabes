@@ -1,0 +1,194 @@
+:root {
+    --dark: #373151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --gray: #6b7280;
+    --light: #fff;
+    --pink: #ec4899;
+    --purple: #8b5cf6;
+}
+*{
+    font-family: 'fira sans', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+.subsection-navbar{
+    background-color:#333333;
+    width: 90%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 70px;
+}
+.logo-subsection-matches{
+    width: 120px;
+    cursor: pointer;
+    background-color: black;
+    border: 2px solid #263238;
+    border-radius: 70px;
+    margin-left: 50px;
+}
+
+.subsection-navbar h1 {
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        font-size: 92px;
+        padding: 20px 40px;
+        text-align: center;
+        text-transform: uppercase;
+        text-rendering: optimizeLegibility;
+        border: 10px solid #111111;
+        border-top: hidden;
+        border-bottom: hidden;
+        
+}
+.logo-subsection-matches:hover{
+    background-color: #f0f0f0;
+    transition: 1s;
+}
+/*source:https://codepen.io/juanbrujo/pen/DBKxxM*/
+.deepshadow {
+    color: #e0dfdc;
+    background-color: transparent;
+    letter-spacing: .1em;
+    text-shadow: 
+      0 -1px 0 #fff, 
+      0 1px 0 #2e2e2e, 
+      0 2px 0 #2c2c2c, 
+      0 3px 0 #2a2a2a, 
+      0 4px 0 #282828, 
+      0 5px 0 #262626, 
+      0 6px 0 #242424, 
+      0 7px 0 #222, 
+      0 8px 0 #202020, 
+      0 9px 0 #1e1e1e, 
+      0 10px 0 #1c1c1c, 
+      0 11px 0 #1a1a1a, 
+      0 12px 0 #181818, 
+      0 13px 0 #161616, 
+      0 14px 0 #141414, 
+      0 15px 0 #121212, 
+      0 22px 30px rgba(0, 0, 0, 0.9);
+}
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+#new-message-form {
+    display: flex;
+}
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+#new-message-input{
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+#new-message-input::placeholder{
+    color: var(--gray);
+}
+#new-message-submit {
+    color: var(--pink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--pink),
+    var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#new-message-submit:hover {
+    opacity: 0.8;
+}
+
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.messages-list {
+    padding: 1rem;
+}
+
+#messages .messages {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+#messages .messages .content{
+    flex: 1 1 0%;
+}
+
+#messages .messages .content .text{
+    color: var(--light);
+    font-size: 1.125rem;
+    width: 100%;
+    height: 50px;
+    display: block;
+    transition: 0.4s;
+    position: relative;
+    margin-left: 10px;
+    background-color: #111827;
+    border: hidden;
+    resize: none;
+    transform:translateX(-80px)
+}
+#messages .messages .content .text::-webkit-scrollbar{
+    width: 0px;
+}
+#messages .messages .content .text:not(:read-only) {
+    color: var(--pink);
+}
+
+#messages .messages .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.messages .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4;
+}
+.messages .actions .edit {
+    background-image: linear-gradient(to right, var(--pink),
+    var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.messages .actions .delete {
+    color: crimson;
+}
+
+.name {
+    margin: auto;
+    color: #f0f0f0;
+    font-size: medium;
+
+}

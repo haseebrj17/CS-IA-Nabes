@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches</title>
+    <link rel="stylesheet" href="css/notify.css">
+</head>
+<body style="background-color:#111111;">
+    <div class="subsection-navbar">
+        <a href=""><img src="logo.png" class="logo-subsection-matches"></a>
+        <h1 class="deepshadow">NOTIFY</h1>
+            <a href="">
+                <img src="next.png" class="logo-subsection-matches" style="transform:translateX(-30px)">
+            </a>
+
+        </div> 
+        <br>
+        <br>
+        <div style="margin: 0;">
+            <header>
+                <form id="new-message-form">
+                    <input
+                    type="text"
+                    id="new-message-input"
+                    autocomplete="off"
+                    placeholder="leave a message" />
+                    <input
+                    type="submit"
+                    id="new-message-submit"
+                    value="Add message" />
+                </form>
+            </header>
+
+            <main>
+                <section class="messages-list">
+                    <h2 style="font-size: 1.5rem;font-weight: 300;color: gray;margin-bottom: 1rem;">Messages</h2>
+
+                    <div id="messages">
+                        <!--<div class="messages">
+                        <div class="content">
+                            <input
+                            type="text"
+                            class="text"
+                            value="My messages"
+                            readonly />
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                        </div>-->
+                    </div>
+                </section>
+            </main>
+         </div>
+            <script src="notify.js"></script>
+</body>
+</html>

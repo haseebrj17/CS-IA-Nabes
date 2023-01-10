@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches</title>
+    <link rel="stylesheet" href="css/ratings.css">
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+</head>
+<body style="background-color:#111111;">
+    <div class="subsection-navbar">
+        <a href=""><img src="imgs/logo.png" class="logo-subsection-matches"></a>
+        <h1 class="deepshadow">RATINGS</h1>
+            <a href="">
+                <img src="imgs/next.png" class="logo-subsection-matches" style="transform:translateX(-30px)">
+            </a>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="percent" style="--clr:#ec4899; --num1:{{underhand}}">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{underhand}}</h2>
+                    <p>Underhand</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="percent2" style="--clr:green; --num1:{{overhead}}">
+                <div class="dot2"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{overhand}}</h2>
+                    <p>Overhand</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="percent" style="--clr:red; --num:{{spiking}}">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{spiking}}</h2>
+                    <p>Spiking</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="percent" style="--clr:purple; --num:{{setting}}">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{setting}}</h2>
+                    <p>Setting</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="percent" style="--clr:yellow; --num:{{digs}}">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{digs}}</h2>
+                    <p>Digs</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="percent" style="--clr:#FF9980; --num:{{dumps}}">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{dumps}}</h2>
+                    <p>Dumps</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="percent" style="--clr:#0078ff; --num:{{blocks}}">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{blocks}}</h2>
+                    <p>Blocks</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="ratings.js"></script>
+    <script>
+    var r = document.querySelector(':root');
+    function myFunction_get() {
+      var rs = getComputedStyle(r);
+    }
+    function myFunction_set() {
+      r.style.setProperty('--num1', {{underhand}});
+    }
+    </script>
+</body>
+</html>
+    
+    
