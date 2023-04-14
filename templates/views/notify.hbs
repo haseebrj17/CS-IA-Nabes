@@ -1,60 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matches</title>
+    <title>Notify</title>
     <link rel="stylesheet" href="css/notify.css">
 </head>
+
+
 <body style="background-color:#111111;">
-    <div class="subsection-navbar">
-        <a href=""><img src="logo.png" class="logo-subsection-matches"></a>
-        <h1 class="deepshadow">NOTIFY</h1>
-            <a href="">
-                <img src="next.png" class="logo-subsection-matches" style="transform:translateX(-30px)">
-            </a>
-
-        </div> 
-        <br>
-        <br>
-        <div style="margin: 0;">
-            <header>
-                <form id="new-message-form">
-                    <input
-                    type="text"
-                    id="new-message-input"
-                    autocomplete="off"
-                    placeholder="leave a message" />
-                    <input
-                    type="submit"
-                    id="new-message-submit"
-                    value="Add message" />
-                </form>
-            </header>
-
-            <main>
-                <section class="messages-list">
-                    <h2 style="font-size: 1.5rem;font-weight: 300;color: gray;margin-bottom: 1rem;">Messages</h2>
-
-                    <div id="messages">
-                        <!--<div class="messages">
-                        <div class="content">
-                            <input
-                            type="text"
-                            class="text"
-                            value="My messages"
-                            readonly />
-                        </div>
-                        <div class="actions">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                        </div>-->
+    <section class="land">
+        <div class="bg">
+            {{>navbar}}
+            <div class="chat-container">
+                <div class="left-section">
+                    <div class="heading">
+                        Vball Fnatics
                     </div>
-                </section>
-            </main>
-         </div>
-            <script src="notify.js"></script>
+
+                    <div class="username-heading">
+                        Users
+                    </div>
+
+                    <ul class="username-list">
+                        {{#each uniqueUsernames}}
+                        <li class="single-username">
+
+                            {{this}}
+
+
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+                <div class="break-section">
+
+                </div>
+                <div class="right-section">
+                    <div class="message-container">
+                        <ul class="message-list">
+                            {{#each data}}
+                            <li class="single-message">
+                                <div class="single-message-name">
+                                    {{username}}
+
+                                </div>
+                                <div class="single-message-text">
+                                    {{message}}
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+
+                    </div>
+                    <div class="form-container">
+                        <form id="chat-form" action="/Message" method="POST">
+                          <textarea id="message" name="message" placeholder="Enter Message" required autocomplete="off" class="form-input"></textarea>
+                          <button class="btn" id="btn"><i class="fas fa-paper-plane"></i> Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <script>
+        // get the message container
+        var messageContainer = document.querySelector('.message-list');
+
+        // function to scroll to the bottom of the message container
+        function scrollToBottom() {
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        }
+
+        // call scrollToBottom() when the page loads
+        window.onload = scrollToBottom();
+
+        // call scrollToBottom() whenever a new message is sent
+        document.querySelector('#chat-form').addEventListener('submit', function() {
+            scrollToBottom();
+        });
+    </script>
+
 </body>
+
+
 </html>

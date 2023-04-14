@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Matches Event Calendar</title>
+  <link rel="stylesheet" href="css/match.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+</head>
+
+<body>
+  <section class="landing">
+    {{>navbar}}
+    <div id="calendar"></div>
+    <div class="event-details-container">
+      <div class="heading">
+        EVENT DETAILS:
+      </div>
+       <div id="event-details">Select an Event</div>
+
+    </div>
+    <div class="space"></div>
+   
+
+    <script>
+  $(document).ready(function() {
+    // Define events data
+    var events = [];
+    if ({{{data}}}.length != 0) {
+      events = {{{ data }}};
+    } else {
+      events = [];
+    }
+
+    // Render calendar
+    $('#calendar').fullCalendar({
+      events: events,
+      eventClick: function(event) {
+        // Show event details
+        var html = "<h3>" + event.title + "</h3><p>" + event.description + "</p><p>" + moment(event.start).format('MMMM Do YYYY') + "</p>";
+        $('#event-details').html(html);
+
+        // Deselect all events
+        $('.fc-event').removeClass('selected');
+
+        // Select the clicked event
+        $(this).addClass('selected');
+
+        // Send an AJAX request to the server to delete the event
+        $.ajax({
+          url: "/delete_event",
+          method: "POST",
+          data: {
+            name: name
+          },
+          success: function(response) {
+            if (response.status === "success") {
+              // Remove the deleted event from the calendar
+              $('#calendar').fullCalendar('removeEvents', function(event) {
+                return event.title === name;
+              });
+            } 
+          },
+        });
+      }
+    });
+  });
+</script>
+
+  </section>
+</body>
+
+</html>

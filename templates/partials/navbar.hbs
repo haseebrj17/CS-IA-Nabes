@@ -1,35 +1,40 @@
-<div class="nav-div">   
-    <div class="logo"></div> 
-    <div class="logoname">DOST-E-KHALQ</div>
+<div class="nav-div">
+    <div class="logo"></div>
     <nav class="nav">
         <ul>
             <li>
-                {{# if loggedIn}}
-                    <a href="/">Home</a>
-                    <a href="/Matches">Matches</a>
-                    <a href="/Skill">Skill Ranking</a>
-                    <a href="/Training">Training</a>
-                    <a href="/Notify">Notify</a>
-                    <a href="/Logout">Logout</a>
+                {{#if loggedIn}}
+                <a href="/Home">Home</a>
+                <a href="/Matches">Matches timeline</a>
+                <a href="/Skill">Skill Rantings</a>
+                <a href="/Training">Training Tutorials</a>
+                <a href="/Notify">Notify Chat</a>
+                {{!-- changes here --}}
+                <a href="/logout">Logout</a>
+                {{else}}
+
+                <a href="/">Login</a>
                 {{/if}}
             </li>
         </ul>
     </nav>
 </div>
-    <script>
-	var dd_main = document.querySelector(".user");
+<script>
+    var dd_main = document.querySelector(".user");
 
-	dd_main.addEventListener("hover", function(){
-		this.classList.toggle("active");
-	})
-    </script>
-    <script>
-        const currentLocation = location.href;
-        const menuItems = document.querySelectorAll('a');
-        const menuLength = menuItems.length;
-        for (let i = 0; i<menuLength; i++){
-            if(menuItems[i].href === currentLocation){
-                menuItems[i].className = "active"
-            }
+    dd_main.addEventListener("hover", function () {
+        this.classList.toggle("active");
+    })
+
+
+</script>
+<script>
+    const currentLocation = location.href;
+    const menuItems = document.querySelectorAll('a');
+    const menuLength = menuItems.length;
+    for (let i = 0; i < menuLength; i++) {
+        if (menuItems[i].href === currentLocation) {
+            menuItems[i].className = "active"
         }
-    </script>
+    }
+</script>

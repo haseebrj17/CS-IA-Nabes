@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Tutorials</title>
+    <link rel="stylesheet" href="css/training.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="upload-section">
+        <div class="heading">
+            Add  Video
+        </div>
+        <form id="chat-form" action="/Training" method="POST">
+            <div class="description-container">
+                <div class="form-heading">
+                    Description
+
+                </div>
+                <input id="description" name="description" type="text" placeholder="Enter Description" class = "form-input" required
+                    autocomplete="off" />
+
+            </div>
+            <div class="link-container">
+                <div class="form-heading">
+                    Link
+
+                </div>
+                <input id="link" name="link" type="text" placeholder="Enter Link" class = "form-input" required
+                    autocomplete="off" />
+
+            </div>
+
+            <button class="btn" id="btn"><i class="fas fa-paper-plane"></i> Upload</button>
+        </form>
+
+    </div>
+    <div class="break-section">
+        <div class="break-line">
+            
+        </div>
+    </div>
+    <div class="video-section">
+        <div class="heading">Videos</div>
+        <ul class="video-list">
+            {{#each data}}
+            <li class="single-video">
+                <div class="single-video-description">
+                    {{description}}
+
+                </div>
+                <div class="single-video-link">
+                    <iframe width="480" height="200" src={{link}}>
+                    </iframe>
+                </div>
+                <div class="single-video-name">
+                    uploaded by {{username}}
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+</body>
+
+</html>

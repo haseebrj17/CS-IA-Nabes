@@ -1,14 +1,16 @@
 {
   "name": "csianabes",
   "version": "1.0.0",
-  "description": "Nabeel's IA for CS HL IBDP",
+  "description": "Nabeel's IA for CS SL IBDP",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "author": "Haseeb Rajpoot",
   "license": "MIT",
   "dependencies": {
+    "@socket.io/redis-adapter": "^8.0.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
     "cloudinary": "^1.33.0",
@@ -19,10 +21,12 @@
     "hbs": "^4.2.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.1",
+    "node-calendar-js": "^1.0.3",
     "nodemailer": "^6.8.0",
     "openssl": "^2.0.0",
     "path": "^0.12.7",
-    "stock.io": "^0.0.0"
+    "redis": "^4.5.1",
+    "socket.io": "^4.5.4"
   },
   "devDependencies": {
     "livereload": "^0.9.3",

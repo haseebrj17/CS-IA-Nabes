@@ -6,83 +6,117 @@
     --light: #fff;
     --pink: #ec4899;
     --purple: #8b5cf6;
-    --num1: 0;
-    --num2: 0;
-    --num3: 0;
-    --num4: 0;
-    --num5: 0;
-    --num6: 0;
-    --num7: 0;
-}
-*{
-    font-family: 'fira sans', sans-serif;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    color: #ffffff;
-}
-.subsection-navbar{
-    background-color:#333333;
-    width: 90%;
-    margin: auto;
-    padding: 35px 0;
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    height: 70px;
-}
-.logo-subsection-matches{
-    width: 120px;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    border: 2px solid #263238;
-    border-radius: 70px;
-    margin-left: 50px;
 }
 
-.subsection-navbar h1 {
-        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-        font-size: 92px;
-        padding: 20px 40px;
-        text-align: center;
-        text-transform: uppercase;
-        text-rendering: optimizeLegibility;
-        border: 10px solid #111111;
-        border-top: hidden;
-        border-bottom: hidden;
-        
+*{
+    /* margin: 0;
+    padding: 0; */
+    font-family: sans-serif;
 }
-.logo-subsection-matches:hover{
-    background-color: #ecd9ba;
-    transition: 1s;
+
+@font-face {
+    font-family: seogoe;
+    src: url(../fonts/SEGOEUI.TTF);
 }
-/*source:https://codepen.io/juanbrujo/pen/DBKxxM*/
-.deepshadow {
-    color: #e0dfdc;
-    background-color: transparent;
-    letter-spacing: .1em;
-    text-shadow: 
-      0 -1px 0 #fff, 
-      0 1px 0 #2e2e2e, 
-      0 2px 0 #2c2c2c, 
-      0 3px 0 #2a2a2a, 
-      0 4px 0 #282828, 
-      0 5px 0 #262626, 
-      0 6px 0 #242424, 
-      0 7px 0 #222, 
-      0 8px 0 #202020, 
-      0 9px 0 #1e1e1e, 
-      0 10px 0 #1c1c1c, 
-      0 11px 0 #1a1a1a, 
-      0 12px 0 #181818, 
-      0 13px 0 #161616, 
-      0 14px 0 #141414, 
-      0 15px 0 #121212, 
-      0 22px 30px rgba(0, 0, 0, 0.9);
+
+.landing{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image:url(../imgs/bg-main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+}
+.navbar-container{
+    padding-top: 0px;
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-div{
+    width: 100%;
+    height: 8rem;
+  
+}
+
+.logo{
+    float: left;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--darker);
+    background-color: var(--light);
+    /* border-color: var(--darkest); */
+    margin-top: 0.5rem;
+    margin-left: 3rem;
+    background-image: url(../imgs/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+.nav{
+    float: right;
+}
+
+.nav ul li{ 
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 2.5rem;
+}
+
+.nav ul li a{
+    font-family: seogoe;
+    text-decoration: none;
+    color: var(--light);
+    background-color: var(--darker);
+    line-height: 8rem;
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: 0.6s ease;
+}
+
+.nav ul li a:hover{
+     background-color: var(--gray);
+     color: var(--pink);
+}
+.nav ul li a.active{
+    background-color: var(--gray);
+    color: var(--pink);
+}
+
+.banner{
+    width: 95%;
+    height: 40%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--gray);
+    opacity: 90%;
+    border-radius: 200rem;
+}
+.land{
+    width: 100%;
+    height: 100vh;
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(2, 29, 60, 1));
 }
 .container{
-    position: relative;
+    position: absolute;
+    top: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,18 +137,18 @@ body {
 /* HERE STARTS THE CSS FOR THE FIRST RATING */
 
 
-.container .card .percent{
+.container .card .percent1{
     position: relative;
     width: 150px;
     height: 150px;
 }
-.container .card .percent svg{
+.container .card .percent1 svg{
     position: relative;
     width: 150px;
     height: 150px;
     transform: rotate(270deg);
 }
-.container .card .percent svg circle{
+.container .card .percent1 svg circle{
     width: 100%;
     height: 100%;
     fill: transparent;
@@ -122,7 +156,7 @@ body {
     stroke: #111111;
     transform: translate(5px,5px);
 }
-.container .card .percent svg circle:nth-child(2){
+.container .card .percent1 svg circle:nth-child(2){
     stroke:var(--clr) ;
     stroke-dasharray: 440;
     stroke-dashoffset: calc(440 - (440 * var(--num1)) / 100);
@@ -130,13 +164,13 @@ body {
     animation: fadeIn 1s linear forwards;
     animation-delay: 2.5s;   
 }
-.dot{
+.dot1{
     position: absolute;
     inset: 5px;
     z-index: 10;
-    animation: animateDot 2s linear forwards;
+    animation: animateDot1 2s linear forwards;
 }
-@keyframes animateDot{
+@keyframes animateDot1{
     0%{
         transform: rotate(0deg);
     }
@@ -145,7 +179,7 @@ body {
     }
 }
 
-.dot::before{
+.dot1::before{
     content: '';
     position: absolute;
     top: -5px;
@@ -160,65 +194,6 @@ body {
 }
 
 
-/* HERE ENDS THE CODE FOR THE FIRST RATING*/
-
-
-
-.container .card .percent2{
-    position: relative;
-    width: 150px;
-    height: 150px;
-}
-.container .card .percent2 svg{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    transform: rotate(270deg);
-}
-.container .card .percent2 svg circle{
-    width: 100%;
-    height: 100%;
-    fill: transparent;
-    stroke-width: 2;
-    stroke: #111111;
-    transform: translate(5px,5px);
-}
-.container .card .percent2 svg circle:nth-child(2){
-    stroke:var(--clr) ;
-    stroke-dasharray: 440;
-    stroke-dashoffset: calc(440 - (440 * var(--num2)) / 100);
-    opacity: 0;
-    animation: fadeIn 1s linear forwards;
-    animation-delay: 2.5s;
-}
-.dot2{
-    position: absolute;
-    inset: 5px;
-    z-index: 10;
-    animation: animateDot2 2s linear forwards;
-}
-@keyframes animateDot2{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(calc(3.6deg * var(--num2)));
-    }
-}
-
-.dot2::before{
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--clr);
-    box-shadow: 0 0 10px var(--clr),
-    0 0 30px var(--clr);
-}
 
 @keyframes fadeIn{
     0%{
@@ -228,7 +203,6 @@ body {
         opacity: 1;
     }
 }
-
 
 .number{
     position: absolute;
@@ -258,3 +232,4 @@ body {
     margin-top: 0.1px;
     transform: translateY(-15px);
 }
+
